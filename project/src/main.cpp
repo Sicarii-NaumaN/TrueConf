@@ -1,15 +1,13 @@
-// P.S. Хотел по файлам разбросать, но, думаю для проверяющего так будет удобнее.
-// Не знаю, настолько ли принципиально использование именно map, если потребуется - переделаю.
 #include <iostream>
 #include <unordered_map>
 #include <vector>
-
 
 void InitVec(std::vector<int>& vector, const size_t& size) {
     for (size_t i = 0; i < size; i++) {
         vector.push_back(rand() % 10);
     }
 }
+
 void InitMapByVec(std::vector<int>& vector, std::unordered_map<int, int>& map) {
     for (auto i: vector) {
         map[i]++;
@@ -35,7 +33,6 @@ int GetCrossingData(std::vector<T> &vector, std::unordered_map<T, T> &map) {
     return EXIT_SUCCESS;
 }
 
-
 template <class T>
 int RandDel(std::vector<T> &vector, std::unordered_map<T, T> &map) {
     int deleted_val = 0;
@@ -60,11 +57,8 @@ int RandDel(std::vector<T> &vector, std::unordered_map<T, T> &map) {
         }
     }
 
-
     return EXIT_SUCCESS;
 }
-
-
 
 int main() {
     std::vector<int> test_vector;
@@ -92,8 +86,6 @@ int main() {
     for (auto i: test_vector) {
         std::cout << i << " ===> " << test_map[i] <<std::endl;
     }
-
-
 
     return EXIT_SUCCESS;
 }
